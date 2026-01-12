@@ -1,0 +1,29 @@
+@use '../abstracts/variables';
+
+// 1. STYLE DU CORPS (Le texte courant)
+body {
+    font-family: variables.$font-body;
+    font-size: 18px;
+    line-height: 1.6;
+    // On utilise le rôle plutôt que la couleur brute
+    color: variables.$color-text-main; 
+    -webkit-font-smoothing: antialiased;
+}
+
+// On cible explicitement les paragraphes si besoin de spécificité
+p {
+    margin-bottom: 1.5rem;
+    color: variables.$color-text-main;
+}
+
+// 2. STYLE DES TITRES
+h1, h2, h3, .hero-title, .logo {
+    font-family: variables.$font-title;
+    line-height: 1.1;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    // On utilise le rôle titre
+    color: variables.$color-text-titles; 
+}
+
+// ... le reste de ton code (logo, hero-title) ne change pas

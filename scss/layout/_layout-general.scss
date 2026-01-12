@@ -1,0 +1,146 @@
+@use '../abstracts/variables' as v;
+
+/* --- COMPORTEMENT DE SCROLL --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- SECTION HERO --- */
+.hero-accueil {
+    position: relative;
+    height: calc(100vh - #{v.$h-header}); 
+    width: 100%;
+    display: flex;
+    align-items: center;    
+    justify-content: center; 
+    overflow: hidden;
+    background-color: v.$color-black-pro;
+
+    picture, .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .hero-image {
+        object-fit: cover;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        color: v.$color-white;
+        text-align: center; 
+        padding: 0 20px;
+
+        .hero-title {
+            color: v.$color-hero-text; 
+            font-family: v.$font-title;
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin: 0;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+    }
+
+    /* LA FLÈCHE (Mouvement doux) */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 50px; 
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+
+        .arrow {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 0 auto;
+            border-right: 4px solid v.$color-white; 
+            border-bottom: 4px solid v.$color-white; 
+            transform: rotate(45deg);
+            animation: smooth-bounce 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+        }
+    }
+}
+
+/* --- ANCRAGE (Pour le header fixe) --- */
+section[id] {
+    scroll-margin-top: v.$h-header; 
+}
+
+/* --- SECTIONS INDÉPENDANTES --- */
+
+.intro-globale {
+    padding-top: 20px; 
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 50px; 
+    }
+}
+
+.section-contenu {
+    .container {
+    //background-color: grey;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 50px 20px 50px; 
+    // Ordre : Haut (0), Droite (50), Bas (20), Gauche (50)
+    }
+}
+
+.technos-section {
+    .container {
+    /*background-color: red;*/
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 0px 20px; 
+    // Ordre : Haut (0), Droite (50), Bas (20), Gauche (50) 
+    }
+}
+
+/* --- ANIMATION --- */
+@keyframes smooth-bounce {
+    0% { transform: translateY(0) rotate(45deg); opacity: 0.4; }
+    50% { transform: translateY(12px) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(0) rotate(45deg); opacity: 0.4; }
+}
+
+/* --- SECTION AFRICA --- */
+.africaNumeroUn {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 30px;
+    padding: 80px 20px;
+    background-color: v.$color-blue-pro; 
+    color: v.$color-white;
+
+    img {
+        display: block;
+        height: auto;
+        max-width: 100%; 
+        border-radius: 4px;
+    }
+}
+
+@media (min-width: 800px) {
+    .africaNumeroUn {
+        flex-direction: row;
+        justify-content: center;
+        gap: 60px;
+        img { width: 350px; }
+    }
+}

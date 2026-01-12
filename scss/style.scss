@@ -1,0 +1,15 @@
+// 1. Les variables (Toujours en premier, ne génère pas de CSS)
+@use 'abstracts/variables';
+ 
+// 2. Le Reset (Doit être avant tout style spécifique)
+@use 'base/reset';
+
+// 3. Les polices (Importation et règles globales)
+@use 'base/fonts-imports';
+@use 'base/fonts-rules';
+
+// 4. Layout et composants (Ton code métier)
+@use 'layout/header';
+@use 'layout/layout-general';
+@use 'layout/technos';
+@use 'layout/footer'; 

@@ -1,0 +1,106 @@
+.technos-section {
+    /*padding: 50px 0px;*/
+padding-bottom:30px;
+
+    //background-color: #f4f4f4; // Gris clair institutionnel et propre
+//background-color: rgb(232, 120, 120);
+
+
+
+    .container {
+        max-width: 1100px;
+        /*margin: 0 auto;background-color: red;*/
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: 'Inter', sans-serif;
+        color: #222;
+    }
+
+    .tech-grid {
+        display: grid;
+        gap: 20px;
+        
+        /* ÉTAT MOBILE : 1 COLONNE UNIQUE */
+        grid-template-columns: 1fr;
+    }
+
+    .tech-item {
+        background-color: #ffffff; // Fond blanc pour détacher les items du fond gris
+        border: 1px solid #e0e0e0;
+        padding: 30px 15px;
+        text-align: center;
+        border-radius: 8px; // Arrondi plus moderne
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            font-size: 2rem;    // Taille augmentée pour l'impact visuel
+            margin-bottom: 12px;
+            display: block;
+            color: #444;        // Gris anthracite pour les icônes
+        }
+
+        span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #333;
+            display: block; 
+            word-wrap: break-word;
+        }
+
+        // Suppression du hover ici pour le mobile (évite les bugs tactiles)
+    }
+}
+
+
+
+.tech-grid a.tech-item {
+    text-decoration: none; /* Supprime le soulignement */
+    color: inherit;        /* Garde la couleur de texte initiale (noir ou gris foncé) */
+    display: flex;         /* On s'assure que le lien se comporte comme un bloc */
+    
+    &:hover {
+        text-decoration: none; /* Sécurité pour le survol */
+        /* Ici tu peux ajouter ton effet de survol discret si tu le souhaites */
+    }
+}
+
+
+
+
+
+
+
+
+/* --- BREAKPOINT DESKTOP : 800px --- */ 
+@media (min-width: 800px) {
+    .technos-section {
+        .tech-grid {
+            /* ÉTAT DESKTOP : 3 COLONNES STRICTES */
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .tech-item {
+            cursor: pointer;
+
+            // LE SURVOL : Uniquement en format Desktop
+            &:hover {
+                border-color: #000;
+                background-color: #ffffff;
+                transform: translateY(-5px); // Soulèvement discret
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05); // Ombre élégante
+                
+                i {
+                    color: #000; // L'icône fonce au survol
+                }
+            }
+        }
+    }
+}

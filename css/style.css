@@ -1,0 +1,509 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+h1, h2, h3, .hero-title, .logo {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.1;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+/* Ajustement pour le header fixe */
+body {
+  padding-top: 70px;
+  margin: 0;
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 9999;
+}
+.main-header .header-inner {
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  font-weight: 900;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* LA NAV : Elle doit aussi être en Flex pour aligner ses enfants */
+.main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+/* LE BURGER */
+.burger-menu {
+  display: none;
+  width: 30px;
+  height: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.burger-menu span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #1a1a1a;
+}
+
+/* NAVIGATION DESKTOP */
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.nav-list li {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.nav-list li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  color: #1a1a1a;
+  text-decoration: none;
+  height: 100%;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.nav-list li a:hover {
+  color: #1a1a1a;
+}
+.nav-list li a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: #1a1a1a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .burger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav-list {
+    display: none;
+  }
+  .nav-list.is-open {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #FFFFFF;
+    z-index: 9998;
+  }
+  .nav-list.is-open li {
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .nav-list.is-open li a {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 25px 0;
+  }
+}
+/* --- COMPORTEMENT DE SCROLL --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- SECTION HERO --- */
+.hero-accueil {
+  position: relative;
+  height: calc(100vh - 70px);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  /* LA FLÈCHE (Mouvement doux) */
+}
+.hero-accueil picture, .hero-accueil .hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.hero-accueil .hero-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero-accueil .hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero-accueil .hero-content .hero-title {
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+.hero-accueil .scroll-indicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 10;
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.hero-accueil .scroll-indicator .arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  border-right: 4px solid #FFFFFF;
+  border-bottom: 4px solid #FFFFFF;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-animation: smooth-bounce 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+          animation: smooth-bounce 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* --- ANCRAGE (Pour le header fixe) --- */
+section[id] {
+  scroll-margin-top: 70px;
+}
+
+/* --- SECTIONS INDÉPENDANTES --- */
+.intro-globale {
+  padding-top: 20px;
+}
+.intro-globale .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.section-contenu .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 50px 20px 50px;
+}
+
+.technos-section .container {
+  /*background-color: red;*/
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 0px 20px;
+}
+
+/* --- ANIMATION --- */
+@-webkit-keyframes smooth-bounce {
+  0% {
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+    opacity: 0.4;
+  }
+  50% {
+    -webkit-transform: translateY(12px) rotate(45deg);
+            transform: translateY(12px) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+    opacity: 0.4;
+  }
+}
+@keyframes smooth-bounce {
+  0% {
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+    opacity: 0.4;
+  }
+  50% {
+    -webkit-transform: translateY(12px) rotate(45deg);
+            transform: translateY(12px) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
+    opacity: 0.4;
+  }
+}
+/* --- SECTION AFRICA --- */
+.africaNumeroUn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  padding: 80px 20px;
+  background-color: #003366;
+  color: #FFFFFF;
+}
+.africaNumeroUn img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+@media (min-width: 800px) {
+  .africaNumeroUn {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 60px;
+  }
+  .africaNumeroUn img {
+    width: 350px;
+  }
+}
+.technos-section {
+  /*padding: 50px 0px;*/
+  padding-bottom: 30px;
+}
+.technos-section .container {
+  max-width: 1100px;
+  /*margin: 0 auto;background-color: red;*/
+}
+.technos-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: "Inter", sans-serif;
+  color: #222;
+}
+.technos-section .tech-grid {
+  display: grid;
+  gap: 20px;
+  /* ÉTAT MOBILE : 1 COLONNE UNIQUE */
+  grid-template-columns: 1fr;
+}
+.technos-section .tech-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 30px 15px;
+  text-align: center;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.technos-section .tech-item i {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
+  color: #444;
+}
+.technos-section .tech-item span {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: #333;
+  display: block;
+  word-wrap: break-word;
+}
+
+.tech-grid a.tech-item {
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit; /* Garde la couleur de texte initiale (noir ou gris foncé) */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /* On s'assure que le lien se comporte comme un bloc */
+}
+.tech-grid a.tech-item:hover {
+  text-decoration: none; /* Sécurité pour le survol */
+  /* Ici tu peux ajouter ton effet de survol discret si tu le souhaites */
+}
+
+/* --- BREAKPOINT DESKTOP : 800px --- */
+@media (min-width: 800px) {
+  .technos-section .tech-grid {
+    /* ÉTAT DESKTOP : 3 COLONNES STRICTES */
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .technos-section .tech-item {
+    cursor: pointer;
+  }
+  .technos-section .tech-item:hover {
+    border-color: #000;
+    background-color: #ffffff;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+  .technos-section .tech-item:hover i {
+    color: #000;
+  }
+}
+.main-footer {
+  width: 100%;
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+  padding: 40px 0 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  /* Rendu Mobile (Instruction du 05/01) */
+}
+.main-footer .footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.main-footer .footer-navigation, .main-footer .footer-socials {
+  margin-bottom: 20px;
+}
+.main-footer .footer-navigation a, .main-footer .footer-socials a {
+  color: #999999;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.main-footer .footer-navigation a:hover, .main-footer .footer-socials a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+.main-footer .footer-copyright {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 0.8rem;
+  color: #999999;
+  opacity: 0.7;
+}
+@media (max-width: 800px) {
+  .main-footer {
+    padding: 20px 0;
+    font-size: 0.8rem;
+  }
+  .main-footer .footer-navigation a {
+    display: block;
+    margin: 10px 0;
+  }
+}/*# sourceMappingURL=style.css.map */
