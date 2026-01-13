@@ -17,13 +17,12 @@ body {
     z-index: 9999;
 
     .header-inner {
-        max-width: 1400px;
+        width: 100%; 
         height: 100%;
-        margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 50px; 
         display: flex;
         justify-content: space-between;
-        align-items: center; // Aligne le logo et la nav verticalement
+        align-items: center; 
     }
 }
 
@@ -35,7 +34,7 @@ body {
     text-transform: uppercase;
 }
 
-/* LA NAV : Elle doit aussi être en Flex pour aligner ses enfants */
+/* LA NAV */
 .main-nav {
     display: flex;
     align-items: center;
@@ -83,18 +82,22 @@ body {
             height: 100%;
             position: relative;
             transition: 0.3s;
-            
-            &:hover {
-                color: v.$color-black-pro;
-                // Soulignement discret (Instruction 05/01)
+
+            /* Effet Desktop uniquement (min-width: 801px) */
+            @media (min-width: 801px) {
                 &::after {
                     content: '';
                     position: absolute;
                     bottom: 15px;
                     left: 20px;
-                    right: 20px;
+                    width: 0; /* Départ à 0 pour l'effet de croissance */
                     height: 2px;
                     background-color: v.$color-black-pro;
+                    transition: width 0.3s ease; /* Animation de la largeur */
+                }
+                
+                &:hover::after {
+                    width: calc(100% - 40px); /* S'étire sur toute la largeur disponible entre les paddings */
                 }
             }
         }
@@ -103,6 +106,12 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 800px) {
+    .main-header {
+        .header-inner {
+            padding: 0 20px;
+        }
+    }
+
     .burger-menu {
         display: flex; 
     }
