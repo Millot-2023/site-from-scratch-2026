@@ -13,7 +13,7 @@ body {
     width: 100%;
     height: v.$h-header;
     background-color: v.$color-white;
-    border-bottom: 1px solid v.$gray-light;
+    border-bottom: 1px solid v.$color-gray-light; // Correction ici
     z-index: 9999;
 
     .header-inner {
@@ -90,14 +90,14 @@ body {
                     position: absolute;
                     bottom: 15px;
                     left: 20px;
-                    width: 0; /* Départ à 0 pour l'effet de croissance */
+                    width: 0; 
                     height: 2px;
                     background-color: v.$color-black-pro;
-                    transition: width 0.3s ease; /* Animation de la largeur */
+                    transition: width 0.3s ease;
                 }
                 
                 &:hover::after {
-                    width: calc(100% - 40px); /* S'étire sur toute la largeur disponible entre les paddings */
+                    width: calc(100% - 40px);
                 }
             }
         }
@@ -132,7 +132,7 @@ body {
 
             li {
                 width: 100%;
-                border-bottom: 1px solid v.$gray-light;
+                border-bottom: 1px solid v.$color-gray-light; // Correction ici
                 a {
                     width: 100%;
                     justify-content: center;

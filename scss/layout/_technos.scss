@@ -1,38 +1,43 @@
+@use '../abstracts/variables' as v;
+
 .technos-section {
-    /*padding: 50px 0px;*/
-padding-bottom:30px;
-
-    //background-color: #f4f4f4; // Gris clair institutionnel et propre
-//background-color: rgb(232, 120, 120);
-
-
+    // Diagnostic : Vert fluo (Défini dans variables.scss)
+    background-color: v.$debug-technos; 
+    padding-top: 40px;
+    padding-bottom: 40px;
 
     .container {
         max-width: 1100px;
-        /*margin: 0 auto;background-color: red;*/
+        margin: 0 auto;
+        padding: 40px;
+        background-color: v.$color-white;
+        border-radius: 8px;
+        // Ombre légère harmonisée avec le reste du site
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     h2 {
         text-align: center;
-        margin-bottom: 50px;
-        font-family: 'Inter', sans-serif;
-        color: #222;
+        margin-top: 0;
+        margin-bottom: 40px;
+        font-family: v.$font-title;
+        color: v.$color-text-titles;
     }
 
     .tech-grid {
         display: grid;
         gap: 20px;
-        
-        /* ÉTAT MOBILE : 1 COLONNE UNIQUE */
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; // Mobile par défaut
     }
 
-    .tech-item {
-        background-color: #ffffff; // Fond blanc pour détacher les items du fond gris
-        border: 1px solid #e0e0e0;
+    a.tech-item {
+        text-decoration: none;
+        color: inherit;
+        background-color: v.$color-white;
+        border: 1px solid v.$color-gray-light;
         padding: 30px 15px;
         text-align: center;
-        border-radius: 8px; // Arrondi plus moderne
+        border-radius: 8px;
         transition: all 0.3s ease;
         display: flex;
         flex-direction: column;
@@ -40,66 +45,35 @@ padding-bottom:30px;
         justify-content: center;
 
         i {
-            font-size: 2rem;    // Taille augmentée pour l'impact visuel
+            font-size: 2rem;
             margin-bottom: 12px;
-            display: block;
-            color: #444;        // Gris anthracite pour les icônes
+            color: v.$color-text-main;
         }
 
         span {
-            font-family: 'Inter', sans-serif;
+            font-family: v.$font-body;
             font-weight: 500;
-            font-size: 1.05rem;
-            color: #333;
-            display: block; 
-            word-wrap: break-word;
+            color: v.$color-text-main;
         }
-
-        // Suppression du hover ici pour le mobile (évite les bugs tactiles)
     }
 }
-
-
-
-.tech-grid a.tech-item {
-    text-decoration: none; /* Supprime le soulignement */
-    color: inherit;        /* Garde la couleur de texte initiale (noir ou gris foncé) */
-    display: flex;         /* On s'assure que le lien se comporte comme un bloc */
-    
-    &:hover {
-        text-decoration: none; /* Sécurité pour le survol */
-        /* Ici tu peux ajouter ton effet de survol discret si tu le souhaites */
-    }
-}
-
-
-
-
-
-
-
 
 /* --- BREAKPOINT DESKTOP : 800px --- */ 
 @media (min-width: 800px) {
     .technos-section {
         .tech-grid {
-            /* ÉTAT DESKTOP : 3 COLONNES STRICTES */
             grid-template-columns: repeat(3, 1fr);
         }
 
-        .tech-item {
-            cursor: pointer;
-
-            // LE SURVOL : Uniquement en format Desktop
-            &:hover {
-                border-color: #000;
-                background-color: #ffffff;
-                transform: translateY(-5px); // Soulèvement discret
-                box-shadow: 0 10px 20px rgba(0,0,0,0.05); // Ombre élégante
-                
-                i {
-                    color: #000; // L'icône fonce au survol
-                }
+        // On garde uniquement l'effet de bordure et de légère élévation
+        // sans changer le background, conformément à tes goûts.
+        a.tech-item:hover {
+            border-color: v.$color-black-pro; 
+            transform: translateY(-5px); 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08); 
+            
+            i {
+                color: v.$color-black-pro;
             }
         }
     }

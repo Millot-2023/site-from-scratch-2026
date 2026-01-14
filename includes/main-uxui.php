@@ -68,6 +68,7 @@
 
 
 <!--Afrfica N1-->
+
 <section class="section-portfolio">
     <div class="container"> 
         <h2>Mes Réalisations</h2>
@@ -255,6 +256,65 @@
                     <div class="skill-bar"><span style="width: 40%;">Patience</span></div>
                 </div>
             </article>
+        </div>
+    </div>
+</section>
+
+<!--USER JOURNEY-->
+<section class="section-userJourney">
+    <div class="container"> <div class="journey-wrapper">
+            
+            <div class="journey-step">
+                <div class="step-icon">1</div>
+                <div class="step-content"><h4>Audit</h4><p>Analyse</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">2</div>
+                <div class="step-content"><h4>Brief</h4><p>Objectifs</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">3</div>
+                <div class="step-content"><h4>UX</h4><p>Recherche</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">4</div>
+                <div class="step-content"><h4>Idée</h4><p>Concept</p></div>
+            </div>
+
+            <div class="journey-step">
+                <div class="step-icon">5</div>
+                <div class="step-content"><h4>Wire</h4><p>Structure</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">6</div>
+                <div class="step-content"><h4>UI</h4><p>Maquettes</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">7</div>
+                <div class="step-content"><h4>Proto</h4><p>Interactions</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">8</div>
+                <div class="step-content"><h4>Tests</h4><p>Validation</p></div>
+            </div>
+
+            <div class="journey-step">
+                <div class="step-icon">9</div>
+                <div class="step-content"><h4>Fix</h4><p>Affinage</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">10</div>
+                <div class="step-content"><h4>Assets</h4><p>Exports</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">11</div>
+                <div class="step-content"><h4>Handoff</h4><p>Livraison</p></div>
+            </div>
+            <div class="journey-step">
+                <div class="step-icon">12</div>
+                <div class="step-content"><h4>Suivi</h4><p>QA</p></div>
+            </div>
+
         </div>
     </div>
 </section>

@@ -1,40 +1,66 @@
 @use '../abstracts/variables' as v;
 
 .section-portfolio {
-    padding: 60px 0;
-    background-color: #fce4ec; // COULEUR TEST : Rose
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+    // Diagnostic : Rose (Défini dans variables.scss)
+    background-color: v.$debug-portfolio; 
 
-    // On ajoute la grille de 4 à la base commune
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: v.$color-white;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 30px;
+        text-align: center;
+        color: v.$color-black-pro;
+    }
+
     .portfolio-grid, 
     .portfolio-grid-2,
     .portfolio-grid-4 {
         display: grid;
         gap: 30px;
-        margin-bottom: 40px;
+        margin-bottom: 0;
 
         .grid-item {
             width: 100%;
             img {
                 width: 100%;    
-                height: auto;   // Respect absolu de l'intégrité du visuel
+                height: auto;
                 display: block;
+                border-radius: 4px;
             }
         }
     }
 
-    // Nombre de colonnes par variante
     .portfolio-grid   { grid-template-columns: repeat(3, 1fr); }
     .portfolio-grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .portfolio-grid-4 { grid-template-columns: repeat(4, 1fr); } // Pour le magazine
+    .portfolio-grid-4 { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* MOBILE : Breakpoint 800px */
 @media (max-width: 800px) {
     .section-portfolio {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .container {
+            padding: 20px;
+        }
+
         .portfolio-grid, 
-        .portfolio-grid-2,
+        .portfolio-grid-2, 
         .portfolio-grid-4 {
-            grid-template-columns: 1fr; // Empilage simple
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
     }
 }

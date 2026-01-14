@@ -1,0 +1,92 @@
+@use '../abstracts/variables' as v;
+
+/* --- SECTION PRINCIPALE --- */
+.section-userJourney {
+    // Ajusté à 40px pour correspondre aux sections Portfolio/Technos
+    padding-top: 40px; 
+    padding-bottom: 40px;
+    background-color: #7dbbd0 !important; 
+}
+
+.journey-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    // Pas de padding ici car le .container s'en occupe dans le HTML
+}
+
+.journey-step {
+    position: relative;
+    flex: 0 0 25%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    // Espace entre les lignes de la journey
+    margin-bottom: 40px; 
+
+    /* --- LE TRAIT DE LIAISON --- */
+    &::after {
+        content: "";
+        position: absolute;
+        top: 25px; 
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff !important;
+        z-index: 1;
+    }
+
+    &:nth-child(4n)::after {
+        display: none;
+    }
+
+    /* --- LE ROND (CERNE) --- */
+    .step-icon {
+        width: 50px;
+        height: 50px;
+        background-color: #ffffff !important;
+        color: #1a4a5e !important;
+        border: 3px solid #1a4a5e !important; 
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+        position: relative;
+        z-index: 2; 
+        flex-shrink: 0;
+    }
+
+    .step-content {
+        margin-top: 15px;
+        h4 { color: #ffffff; margin: 0; font-size: 18px; }
+        p { color: #ffffff; margin: 0; font-size: 14px; }
+    }
+
+    /* --- FORMAT MOBILE (Sous 800px) --- */
+    @media (max-width: 800px) {
+        flex: 0 0 100%;
+        flex-direction: row;
+        text-align: left;
+        margin-bottom: 30px;
+
+        &::after {
+            width: 2px;
+            height: 100%;
+            left: 25px; // Centre du rond (50px / 2)
+            top: 50px;
+        }
+
+        &:nth-child(4n)::after { display: block; }
+        &:last-child::after { display: none; }
+
+        .step-content {
+            margin-top: 0;
+            margin-left: 20px;
+        }
+    }
+}

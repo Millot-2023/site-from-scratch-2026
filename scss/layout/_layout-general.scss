@@ -12,7 +12,6 @@ html {
     margin-right: auto;
     padding: 0 50px; 
     width: 100%;
-    // Ligne de test pour voir les limites du container
     outline: 1px dashed rgba(0, 0, 0, 0.1); 
 
     @media (max-width: 800px) {
@@ -93,31 +92,26 @@ section[id] {
     scroll-margin-top: v.$h-header; 
 }
 
-/* --- SECTIONS AVEC COULEURS DE TEST --- */
+/* --- SECTIONS AVEC COULEURS DE TEST (DEBUG ACTIF) --- */
 
 .intro-globale {
     padding: 40px 0; 
-    background-color: #e3f2fd; // COULEUR TEST : Bleu clair (Intro)
+    background-color: v.$debug-magazine; // Diagnostic Magazine
 }
 
 .technos-section {
     padding: 60px 0;
-    background-color: #f1f8e9; // COULEUR TEST : Vert clair (Grille Technos)
+    background-color: v.$debug-technos; // Diagnostic Vert Fluo
 }
 
 .section-contenu {
     padding: 60px 0;
-    background-color: #fff3e0; // COULEUR TEST : Orange clair (Blocs Expertises)
-    
-    // Alterne la couleur si deux blocs se suivent
-    &:nth-of-type(even) {
-        background-color: #f3e5f5; // COULEUR TEST : Violet clair
-    }
+    background-color: v.$debug-magazine; 
 }
 
 .section-portfolio {
     padding: 80px 0;
-    background-color: #fce4ec; // COULEUR TEST : Rose (Grille Portfolio)
+    background-color: v.$debug-portfolio; // Diagnostic Rose
 }
 
 /* --- ANIMATION --- */
@@ -145,26 +139,18 @@ section[id] {
     }
 }
 
-
 /* --- SECTION MONK --- */
 .section-monks-intro {
-    // background-color: #ffd700; // COULEUR TEST : Fond jaune pour l'image pleine largeur
-    padding: 0px 0; // Un peu de padding pour l'image si elle n'occupe pas toute la hauteur
-    text-align: left; // Pour centrer l'image si elle est plus petite
+    padding: 0px 0; 
+    text-align: left; 
     
     img {
-        max-width: 100%; // S'assure que l'image ne déborde jamais
+        max-width: 100%; 
         height: auto;
-        display: block; // Évite les espaces sous l'image
-        margin: 0 auto; // Centre l'image si elle n'est pas à 100%
+        display: block; 
+        margin: 0 auto; 
     }
 }
-
-
-
-
-
-
 
 @media (min-width: 800px) {
     .africaNumeroUn {

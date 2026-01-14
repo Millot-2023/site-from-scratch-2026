@@ -9,5 +9,6 @@
 @use 'layout/layout-general';
 @use 'layout/technos';
 @use 'layout/grid';
-@use 'layout/persona'; // Ton nouveau fichier
+@use 'layout/persona';
+@use 'layout/journey'; // <-- AJOUTE CETTE LIGNE ICI
 @use 'layout/footer';

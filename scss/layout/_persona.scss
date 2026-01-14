@@ -1,20 +1,22 @@
 @use '../abstracts/variables' as v;
 
 #persona-section {
-    background-color: #f4f4f4; 
-    padding: 4rem 0;
+    // Diagnostic : Jaune canari (Défini dans variables.scss)
+    background-color: v.$debug-persona; 
+    
+    // Ajusté à 40px pour l'équilibre global entre les sections
+    padding: 40px 0;
 
-    // Utilisation de l'ID + Classe pour garantir la priorité maximale
     & .persona-wrapper {
-        display: grid !important; // Force le mode grille
-        grid-template-columns: 1fr 1.5fr; // Définit les 2 colonnes
+        display: grid !important; 
+        grid-template-columns: 1fr 1.5fr; 
         gap: 3rem;
         align-items: start;
         
         background-color: v.$color-white; 
         padding: 3rem;
         border-radius: 12px;
-        border: 1px solid v.$gray-light;
+        border: 1px solid v.$color-gray-light; 
         position: relative;
         overflow: hidden;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -27,7 +29,6 @@
         }
     }
 
-    // On s'assure que les articles ne forcent pas une largeur de 100%
     .persona-card, .persona-details {
         background: transparent;
         border: none;
@@ -35,7 +36,6 @@
         width: 100%; 
     }
 
-    // --- Styles internes ---
     .persona-photo {
         text-align: center;
         margin-bottom: 1.5rem;
@@ -91,17 +91,19 @@
     }
 }
 
-// Media Query : Empilé uniquement sur mobile
 @media (max-width: 800px) {
+    #persona-section {
+        padding: 20px 0;
+    }
+    
     #persona-section .persona-wrapper {
         grid-template-columns: 1fr !important;
         padding: 2rem;
     }
 }
 
-// Style des barres de compétences (en dehors du nesting section si tu veux les réutiliser)
 .skill-bar {
-    background: v.$gray-light;
+    background: v.$color-gray-light; 
     height: 12px;
     border-radius: 6px;
     margin-bottom: 1rem;
