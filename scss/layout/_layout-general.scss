@@ -5,6 +5,21 @@ html {
     scroll-behavior: smooth;
 }
 
+/* --- STRUCTURE UNIVERSELLE --- */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 50px; 
+    width: 100%;
+    // Ligne de test pour voir les limites du container
+    outline: 1px dashed rgba(0, 0, 0, 0.1); 
+
+    @media (max-width: 800px) {
+        padding: 0 20px;
+    }
+}
+
 /* --- SECTION HERO --- */
 .hero-accueil {
     position: relative;
@@ -49,7 +64,6 @@ html {
         }
     }
 
-    /* LA FLÈCHE (Mouvement doux) */
     .scroll-indicator {
         position: absolute;
         bottom: 50px; 
@@ -74,41 +88,36 @@ html {
     }
 }
 
-/* --- ANCRAGE (Pour le header fixe) --- */
+/* --- ANCRAGE --- */
 section[id] {
     scroll-margin-top: v.$h-header; 
 }
 
-/* --- SECTIONS INDÉPENDANTES --- */
+/* --- SECTIONS AVEC COULEURS DE TEST --- */
 
 .intro-globale {
-    padding-top: 20px; 
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 50px; 
-    }
-}
-
-.section-contenu {
-    .container {
-    //background-color: grey;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 50px 20px 50px; 
-    // Ordre : Haut (0), Droite (50), Bas (20), Gauche (50)
-    }
+    padding: 40px 0; 
+    background-color: #e3f2fd; // COULEUR TEST : Bleu clair (Intro)
 }
 
 .technos-section {
-    .container {
-    /*background-color: red;*/
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 0px 20px; 
-    // Ordre : Haut (0), Droite (50), Bas (20), Gauche (50) 
+    padding: 60px 0;
+    background-color: #f1f8e9; // COULEUR TEST : Vert clair (Grille Technos)
+}
+
+.section-contenu {
+    padding: 60px 0;
+    background-color: #fff3e0; // COULEUR TEST : Orange clair (Blocs Expertises)
+    
+    // Alterne la couleur si deux blocs se suivent
+    &:nth-of-type(even) {
+        background-color: #f3e5f5; // COULEUR TEST : Violet clair
     }
+}
+
+.section-portfolio {
+    padding: 80px 0;
+    background-color: #fce4ec; // COULEUR TEST : Rose (Grille Portfolio)
 }
 
 /* --- ANIMATION --- */
@@ -135,6 +144,27 @@ section[id] {
         border-radius: 4px;
     }
 }
+
+
+/* --- SECTION MONK --- */
+.section-monks-intro {
+    // background-color: #ffd700; // COULEUR TEST : Fond jaune pour l'image pleine largeur
+    padding: 0px 0; // Un peu de padding pour l'image si elle n'occupe pas toute la hauteur
+    text-align: left; // Pour centrer l'image si elle est plus petite
+    
+    img {
+        max-width: 100%; // S'assure que l'image ne déborde jamais
+        height: auto;
+        display: block; // Évite les espaces sous l'image
+        margin: 0 auto; // Centre l'image si elle n'est pas à 100%
+    }
+}
+
+
+
+
+
+
 
 @media (min-width: 800px) {
     .africaNumeroUn {

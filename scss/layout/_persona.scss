@@ -1,0 +1,121 @@
+@use '../abstracts/variables' as v;
+
+#persona-section {
+    background-color: #f4f4f4; 
+    padding: 4rem 0;
+
+    // Utilisation de l'ID + Classe pour garantir la priorité maximale
+    & .persona-wrapper {
+        display: grid !important; // Force le mode grille
+        grid-template-columns: 1fr 1.5fr; // Définit les 2 colonnes
+        gap: 3rem;
+        align-items: start;
+        
+        background-color: v.$color-white; 
+        padding: 3rem;
+        border-radius: 12px;
+        border: 1px solid v.$gray-light;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: v.$color-yellow;
+        }
+    }
+
+    // On s'assure que les articles ne forcent pas une largeur de 100%
+    .persona-card, .persona-details {
+        background: transparent;
+        border: none;
+        padding: 0;
+        width: 100%; 
+    }
+
+    // --- Styles internes ---
+    .persona-photo {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        position: relative;
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid v.$color-yellow;
+        }
+
+        .persona-badge {
+            background: v.$color-black-pro;
+            color: v.$color-yellow;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+    }
+
+    .persona-bio {
+        text-align: center;
+        h3 { color: v.$color-black-pro; margin-bottom: 0.5rem; }
+    }
+
+    .persona-details {
+        h4 {
+            margin-top: 1.5rem;
+            color: v.$color-black-pro;
+            border-bottom: 2px solid v.$color-yellow;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                margin-bottom: 0.5rem;
+                display: flex;
+                align-items: center;
+                i { margin-right: 10px; width: 20px; }
+                .fa-check { color: #2ecc71; }
+                .fa-times { color: #e74c3c; }
+            }
+        }
+    }
+}
+
+// Media Query : Empilé uniquement sur mobile
+@media (max-width: 800px) {
+    #persona-section .persona-wrapper {
+        grid-template-columns: 1fr !important;
+        padding: 2rem;
+    }
+}
+
+// Style des barres de compétences (en dehors du nesting section si tu veux les réutiliser)
+.skill-bar {
+    background: v.$gray-light;
+    height: 12px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+
+    span {
+        display: block;
+        height: 100%;
+        background: v.$color-yellow;
+        color: v.$color-black-pro;
+        font-size: 0.7rem;
+        font-weight: bold;
+        line-height: 12px;
+        padding-left: 10px;
+    }
+}

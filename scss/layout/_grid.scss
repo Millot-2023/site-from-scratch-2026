@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as v;
+
+.section-portfolio {
+    padding: 60px 0;
+    background-color: #fce4ec; // COULEUR TEST : Rose
+
+    // On ajoute la grille de 4 à la base commune
+    .portfolio-grid, 
+    .portfolio-grid-2,
+    .portfolio-grid-4 {
+        display: grid;
+        gap: 30px;
+        margin-bottom: 40px;
+
+        .grid-item {
+            width: 100%;
+            img {
+                width: 100%;    
+                height: auto;   // Respect absolu de l'intégrité du visuel
+                display: block;
+            }
+        }
+    }
+
+    // Nombre de colonnes par variante
+    .portfolio-grid   { grid-template-columns: repeat(3, 1fr); }
+    .portfolio-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-grid-4 { grid-template-columns: repeat(4, 1fr); } // Pour le magazine
+}
+
+/* MOBILE : Breakpoint 800px */
+@media (max-width: 800px) {
+    .section-portfolio {
+        .portfolio-grid, 
+        .portfolio-grid-2,
+        .portfolio-grid-4 {
+            grid-template-columns: 1fr; // Empilage simple
+        }
+    }
+}

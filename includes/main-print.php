@@ -17,22 +17,27 @@
     </a>
 </section>
 
+
+
+
 <section id="intro" class="intro-globale">
     <div class="container">
         <div class="etat-civil">
-            <h1 class="cmillot">Christophe MILLOT</h1>
-            <p class="lead"><strong>Développeur & Designer Graphique.</strong> Explorez mes univers créatifs.</p>
-            
+            <h1 class="cmillot">Print</h1>
+            <p class="lead"><strong>Méthodologies centrées utilisateur.</strong> Du diagnostic à la haute fidélité.</p>
             <div class="introduction">
-                <h2>Welcome on board !</h2>
+                <h2>L'utilisateur au cœur du design</h2>
                 <div class="blocs-introduction">
-                    <p>Fort d'un parcours de plus de 20 ans dans les arts graphiques, je mets aujourd'hui ma culture de l'image au service de l'UX/UI Design...</p>
-                    <p>Véritable artisan du rendu, j'assure la transition vers le web via une intégration Front-end soignée...</p>
+                    <p>Découvrir les besoins, structurer l'expérience et valider par le design... voici les piliers de ma démarche.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+
 
 <section id="technos" class="technos-section">
     <div class="container">
@@ -208,4 +213,3 @@
         </div>
     </div>
 </section>
-

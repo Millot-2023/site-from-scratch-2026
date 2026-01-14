@@ -17,22 +17,27 @@
     </a>
 </section>
 
+
+
+
 <section id="intro" class="intro-globale">
     <div class="container">
         <div class="etat-civil">
-            <h1 class="cmillot">Christophe MILLOT</h1>
-            <p class="lead"><strong>Développeur & Designer Graphique.</strong> Explorez mes univers créatifs.</p>
-            
+            <h1 class="cmillot">Processus UX/UI</h1>
+            <p class="lead"><strong>Méthodologies centrées utilisateur.</strong> Du diagnostic à la haute fidélité.</p>
             <div class="introduction">
-                <h2>Welcome on board !</h2>
+                <h2>L'utilisateur au cœur du design</h2>
                 <div class="blocs-introduction">
-                    <p>Fort d'un parcours de plus de 20 ans dans les arts graphiques, je mets aujourd'hui ma culture de l'image au service de l'UX/UI Design...</p>
-                    <p>Véritable artisan du rendu, j'assure la transition vers le web via une intégration Front-end soignée...</p>
+                    <p>Découvrir les besoins, structurer l'expérience et valider par le design... voici les piliers de ma démarche.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+
 
 <section id="technos" class="technos-section">
     <div class="container">
@@ -59,6 +64,9 @@
         </div>
     </div>
 </section>
+
+
+
 <!--Afrfica N1-->
 <section class="section-portfolio">
     <div class="container"> 
@@ -209,3 +217,44 @@
     </div>
 </section>
 
+
+<!--PERSONA-->
+<section id="persona-section" class="section-portfolio">
+    <div class="container">
+        <h2>Processus UX : Le Persona</h2>
+        <p class="lead-text">Donner un visage aux besoins utilisateurs pour humaniser la conception.</p>
+
+        <div class="persona-wrapper">
+            <article class="persona-card">
+                <div class="persona-photo">
+                    <img src="assets/img/myAvatar.svg" alt="Portrait de Marc">
+                    <div class="persona-badge">L'Expert Nomade</div>
+                </div>
+                <div class="persona-bio">
+                    <h3>Marc, 34 ans</h3>
+                    <p><em>"Je veux un outil qui s'adapte à mon rythme, pas l'inverse."</em></p>
+                </div>
+            </article>
+
+            <article class="persona-details">
+                <div class="expertise-intro">
+                    <h4>Ses Besoins</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Interface minimaliste et rapide.</li>
+                        <li><i class="fas fa-check"></i> Synchronisation hors-ligne performante.</li>
+                    </ul>
+
+                    <h4>Ses Frustrations</h4>
+                    <ul>
+                        <li><i class="fas fa-times"></i> Les menus trop profonds et complexes.</li>
+                        <li><i class="fas fa-times"></i> Les temps de chargement excessifs.</li>
+                    </ul>
+                    
+                    <h4>Compétences</h4>
+                    <div class="skill-bar"><span style="width: 90%;">Tech-savvy</span></div>
+                    <div class="skill-bar"><span style="width: 40%;">Patience</span></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
