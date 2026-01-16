@@ -72,6 +72,62 @@
         </div>
     </article>
 
+
+
+
+    <article class="grid-item card-gradient">
+        <div class="gradient-preview-container">
+            <div class="gradient-preview" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);"></div>
+        </div>
+        <div class="gradient-info">
+            <h3>Deep Space</h3>
+            <button class="btn-copy" data-code="linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)">
+                <i class="fas fa-copy"></i> Copier CSS
+            </button>
+        </div>
+    </article>
+
+    <article class="grid-item card-gradient">
+        <div class="gradient-preview-container">
+            <div class="gradient-preview" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);"></div>
+        </div>
+        <div class="gradient-info">
+            <h3>Sunset Peach</h3>
+            <button class="btn-copy" data-code="linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)">
+                <i class="fas fa-copy"></i> Copier CSS
+            </button>
+        </div>
+    </article>
+
+    <article class="grid-item card-gradient">
+        <div class="gradient-preview-container">
+            <div class="gradient-preview" style="background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);"></div>
+        </div>
+        <div class="gradient-info">
+            <h3>Fresh Mint</h3>
+            <button class="btn-copy" data-code="linear-gradient(135deg, #00b09b 0%, #96c93d 100%)">
+                <i class="fas fa-copy"></i> Copier CSS
+            </button>
+        </div>
+    </article>
+
+    <article class="grid-item card-gradient">
+        <div class="gradient-preview-container">
+            <div class="gradient-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+        </div>
+        <div class="gradient-info">
+            <h3>Electric Violet</h3>
+            <button class="btn-copy" data-code="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                <i class="fas fa-copy"></i> Copier CSS
+            </button>
+        </div>
+    </article>
+
+
+
+
+
+
 </div>
     </div>
 </section>

@@ -1,47 +1,36 @@
 @use "../abstracts/variables" as vars;
 
+// 1. LA SECTION
 .section-library {
-    padding: 60px 0; // Règle des 60px respectée
+    padding: 60px 0;
 
     .portfolio-grid {
         display: grid;
         gap: 30px;
         margin-top: 40px;
-
-        // 1. MOBILE (< 600px) : 1 colonne
         grid-template-columns: 1fr;
 
-        // 2. TABLETTE / INTERMÉDIAIRE (600px à 1199px) : 2 colonnes
         @media (min-width: 600px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        // 3. DESKTOP (>= 1200px) : 4 colonnes impératives
         @media (min-width: 1200px) {
             grid-template-columns: repeat(4, 1fr);
         }
     }
 }
 
+// 2. LA CARTE (Fixe, sans animation)
 .card-gradient {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #eee;
     display: flex;
     flex-direction: column;
     height: 100%;
-
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        
-        .gradient-preview {
-            transform: scale(1.05);
-        }
-    }
+    cursor: pointer;
 
     .gradient-preview-container {
         overflow: hidden;
@@ -52,18 +41,47 @@
     .gradient-preview {
         height: 100%;
         width: 100%;
-        transition: transform 0.5s ease;
+        // Aucune transition ici : le visuel reste immobile
     }
 
-    .gradient-info {
-        padding: 20px;
-        text-align: center;
-        
-        h3 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: #333;
-            font-weight: 600;
-        }
+    // LE BLOC &:hover A ÉTÉ SUPPRIMÉ ICI
+}
+
+// 3. LES INFOS
+.gradient-info {
+    padding: 20px;
+    text-align: center;
+    
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: 600;
     }
+}
+
+// 4. LE BOUTON (Indépendant)
+.btn-copy {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+    transition: all 0.2s ease;
+}
+
+.btn-copy:hover {
+    background-color: #2a5298;
+    color: #ffffff;
+    border-color: #2a5298;
+    box-shadow: 0 4px 12px black;
+    transform: translateY(-1px);
+}
+
+.btn-copy:active {
+    background-color: #e67e22;
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
 }
