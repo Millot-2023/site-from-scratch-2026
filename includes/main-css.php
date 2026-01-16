@@ -686,37 +686,89 @@
 </article>
 
 
-<!--
 <article class="grid-item card-gradient">
-    <div class="gradient-preview-container" style="background-color: #f8f5f0; position: relative; overflow: hidden;">
-        <div class="gradient-preview" style="background: #f8f5f0; height: 100%; width: 100%;">
-            
-            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.8;">
-                <filter id='pureOcreAquarelle'>
-                    <feTurbulence type='turbulence' baseFrequency='0.35' numOctaves='5' seed='15' stitchTiles='stitch'/>
-                    
-                    <feColorMatrix type="matrix" values="
-                        0 0 0 0 0.5 
-                        0 0 0 0 0.4 
-                        0 0 0 0 0.2 
-                        0 0 0 1 0" />
-                    
-                    <feComponentTransfer>
-                        <feFuncA type="linear" slope="5" intercept="-1.8"/>
-                    </feComponentTransfer>
+    <div class="gradient-preview-container" style="position: relative; overflow: hidden; height: 200px; background-color: #bbbbbb;">
+        <div class="gradient-preview" style="
+            width: 100%; 
+            height: 100%;
+            background-color: #bbbbbb; 
+            background-image: 
+                linear-gradient(335deg, #a54229 23px, transparent 23px),
+                linear-gradient(155deg, #a54229 23px, transparent 23px),
+                linear-gradient(335deg, #a54229 23px, transparent 23px),
+                linear-gradient(155deg, #a54229 23px, transparent 23px);
+            background-size: 58px 58px;
+            background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+        ">
+            <div style="
+                width: 100%; height: 100%;
+                -webkit-mask-image: 
+                    linear-gradient(335deg, black 23px, transparent 23px),
+                    linear-gradient(155deg, black 23px, transparent 23px),
+                    linear-gradient(335deg, black 23px, transparent 23px),
+                    linear-gradient(155deg, black 23px, transparent 23px);
+                -webkit-mask-size: 58px 58px;
+                -webkit-mask-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+            ">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.9; pointer-events: none;">
+                    <filter id="matiereBriqueTerrePure">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="6" seed="100" stitchTiles="stitch"/>
+                        <feColorMatrix type="matrix" values="
+                            0 0 0 0 0.20 
+                            0 0 0 0 0.05 
+                            0 0 0 0 0.02 
+                            0 0 0 1 0" />
+                        <feComponentTransfer>
+                            <feFuncA type="linear" slope="7" intercept="-2.5"/>
+                        </feComponentTransfer>
+                    </filter>
+                    <rect width="100%" height="100%" filter="url(#matiereBriqueTerrePure)" style="mix-blend-mode: multiply;"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Brique Rouge "Vieillie"</h3>
+        <button class="btn-copy" data-code="Texture: Isolated High Contrast Briques;">
+            <i class="fas fa-copy"></i> Copier CSS
+        </button>
+    </div>
+</article>
+
+
+
+
+<!--BRIQUE NOIR CHARBON-->
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #1a1a1aff; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="
+            width: 100%; 
+            height: 100%;
+            background-color: #222222;
+            background-image: 
+                linear-gradient(335deg, #333333 23px, transparent 23px),
+                linear-gradient(155deg, #333333 23px, transparent 23px),
+                linear-gradient(335deg, #333333 23px, transparent 23px),
+                linear-gradient(155deg, #333333 23px, transparent 23px);
+            background-size: 58px 58px;
+            background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+        ">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.3; pointer-events: none;">
+                <filter id="matiereCharbonFix">
+                    <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="2" stitchTiles="stitch"/>
+                    <feColorMatrix type="saturate" values="0"/>
                 </filter>
-                
-                <rect width='100%' height='100%' filter='url(#pureOcreAquarelle)'/>
+                <rect width="100%" height="100%" filter="url(#matiereCharbonFix)" style="mix-blend-mode: soft-light;"/>
             </svg>
         </div>
     </div>
     <div class="gradient-info">
-        <h3>Aquarelle Ocre Pur</h3>
-        <button class="btn-copy" data-code="background: #f8f5f0; filter: url(#pureOcreAquarelle);">
+        <h3>Brique Noire "Charbon"</h3>
+        <button class="btn-copy" data-code="background: #222222; filter: url(#matiereCharbonFix);">
             <i class="fas fa-copy"></i> Copier CSS
         </button>
     </div>
-</article>-->
+</article>
 
 
 
@@ -724,117 +776,171 @@
 
 
 
-<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <article class="grid-item card-gradient">
-    <div class="gradient-preview-container" style="background-color: #f8f5f0; position: relative; overflow: hidden;">
-        <div class="gradient-preview" style="background: #f8f5f0; height: 100%; width: 100%;">
-            
-            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.8;">
-                <filter id='denseWaterColor'>
-                    <feTurbulence type='turbulence' baseFrequency='0.08' numOctaves='7' seed='10' stitchTiles='stitch'/>
-                    
-                    <feColorMatrix type="matrix" values="
-                        0.7 0 0 0 0
-                        0 0.6 0 0 0
-                        0 0 0.5 0 0
-                        0 0 0 1 0" />
-                    
-                    <feComponentTransfer>
-                        <feFuncA type="linear" slope="4" intercept="-1.2"/>
-                    </feComponentTransfer>
-                </filter>
-                
-                <rect width='100%' height='100%' filter='url(#denseWaterColor)'/>
-            </svg>
+    <div class="gradient-preview-container" style="position: relative; overflow: hidden; height: 200px; background-color: #ffffff;">
+        
+        <div class="gradient-preview" style="
+            width: 100%; 
+            height: 100%;
+            background-color: #544b4bff; /*couleurs des  joints*/
+            background-image: 
+                linear-gradient(335deg, #888888 23px, transparent 23px), /* Briques GRIS MOYEN */
+                linear-gradient(155deg, #888888 23px, transparent 23px),
+                linear-gradient(335deg, #888888 23px, transparent 23px),
+                linear-gradient(155deg, #888888 23px, transparent 23px);
+            background-size: 58px 58px;
+            background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+        ">
+            <div style="
+                width: 100%; height: 100%;
+                -webkit-mask-image: 
+                    linear-gradient(335deg, black 23px, transparent 23px),
+                    linear-gradient(155deg, black 23px, transparent 23px),
+                    linear-gradient(335deg, black 23px, transparent 23px),
+                    linear-gradient(155deg, black 23px, transparent 23px);
+                -webkit-mask-size: 58px 58px;
+                -webkit-mask-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+            ">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.8; pointer-events: none;">
+                    <filter id="matiereGrisVieilliCorrect">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="100" stitchTiles="stitch"/>
+                        
+                        <feColorMatrix type="matrix" values="
+                            0 0 0 0 0.15 
+                            0 0 0 0 0.15 
+                            0 0 0 0 0.15 
+                            0 0 0 1 0" />
+                        
+                        <feComponentTransfer>
+                            <feFuncA type="linear" slope="5" intercept="-1.5"/>
+                        </feComponentTransfer>
+                    </filter>
+                    <rect width="100%" height="100%" filter="url(#matiereGrisVieilliCorrect)" style="mix-blend-mode: multiply;"/>
+                </svg>
+            </div>
         </div>
     </div>
     <div class="gradient-info">
-        <h3>Aquarelle Grain Serré</h3>
-        <button class="btn-copy" data-code="background: #f8f5f0; filter: url(#denseWaterColor);">
+        <h3>Brique Grise "Patine Sombre"</h3>
+        <button class="btn-copy" data-code="Joints: White; Bricks: Mid-Grey; Noise: Dark-Grey;">
             <i class="fas fa-copy"></i> Copier CSS
         </button>
     </div>
-</article>-->
+</article>
 
 
 
 
-<!--
+
+
+
+
 <article class="grid-item card-gradient">
-    <div class="gradient-preview-container" style="background-color: #f8f5f0; position: relative; overflow: hidden;">
-        <div class="gradient-preview" style="background: #f8f5f0; height: 100%; width: 100%;">
-            
-            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.8;">
-                <filter id='heavyWaterColor'>
-                    <feTurbulence type='turbulence' baseFrequency='0.025' numOctaves='4' seed='5' stitchTiles='stitch'/>
+    <div class="gradient-preview-container" style="position: relative; overflow: hidden; height: 200px; background-color: #544b4bff;">
+        
+        <div class="gradient-preview" style="
+            width: 100%; 
+            height: 100%;
+            background-color: #cccccc; 
+            background-image: 
+                linear-gradient(335deg, #888888 23px, transparent 23px),
+                linear-gradient(155deg, #888888 23px, transparent 23px),
+                linear-gradient(335deg, #888888 23px, transparent 23px),
+                linear-gradient(155deg, #888888 23px, transparent 23px);
+            background-size: 58px 58px;
+            background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+        ">
+            <div style="
+                width: 100%; height: 100%;
+                -webkit-mask-image: 
+                    linear-gradient(335deg, black 23px, transparent 23px),
+                    linear-gradient(155deg, black 23px, transparent 23px),
+                    linear-gradient(335deg, black 23px, transparent 23px),
+                    linear-gradient(155deg, black 23px, transparent 23px);
+                -webkit-mask-size: 58px 58px;
+                -webkit-mask-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+            ">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none;">
+                    <defs>
+                        <filter id="patineLarge">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="100"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 1 0" />
+                            <feComponentTransfer>
+                                <feFuncA type="linear" slope="5" intercept="-1.5"/>
+                            </feComponentTransfer>
+                        </filter>
+
+                        <filter id="grainVisible">
+                            <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="3" seed="42"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.05 0 0 0 0 0.05 0 0 0 0 0.05 0 0 0 1 0" />
+                        </filter>
+                    </defs>
+
+                    <rect width="100%" height="100%" filter="url(#patineLarge)" style="mix-blend-mode: multiply; opacity: 0.7;"/>
                     
-                    <feColorMatrix type="matrix" values="
-                        0.7 0 0 0 0
-                        0 0.6 0 0 0
-                        0 0 0.5 0 0
-                        0 0 0 1 0" />
-                    
-                    <feComponentTransfer>
-                        <feFuncA type="linear" slope="5" intercept="-2"/>
-                    </feComponentTransfer>
-                </filter>
-                
-                <rect width='100%' height='100%' filter='url(#heavyWaterColor)'/>
-            </svg>
+                    <rect width="100%" height="100%" filter="url(#grainVisible)" style="mix-blend-mode: overlay; opacity: 1;"/>
+                </svg>
+            </div>
         </div>
     </div>
     <div class="gradient-info">
-        <h3>Aquarelle Pur Coton</h3>
-        <button class="btn-copy" data-code="background: #f8f5f0; filter: url(#heavyWaterColor);">
+        <h3>Brique Grise "Grain Haute Déf"</h3>
+        <button class="btn-copy" data-code="Texture: High-Contrast Grain + Patina;">
             <i class="fas fa-copy"></i> Copier CSS
         </button>
     </div>
-</article>-->
+</article>
 
 
-<!--
+
+
+
+
+
+
+
+
+
+
 <article class="grid-item card-gradient">
-    <div class="gradient-preview-container" style="background-color: #f4f4f2; position: relative; overflow: hidden;">
-        <div class="gradient-preview" style="background: #f4f4f2; height: 100%; width: 100%;">
-            
-            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.8;">
-                <filter id='organicGrain'>
-                    <feTurbulence type='fractalNoise' baseFrequency='0.015' numOctaves='5' stitchTiles='stitch'/>
-                    
-                    <feColorMatrix type="matrix" values="
-                        0.6 0 0 0 0
-                        0 0.5 0 0 0
-                        0 0 0.4 0 0
-                        0 0 0 1 0" />
-                    
-                    <feComponentTransfer>
-                        <feFuncA type="linear" slope="4.0" intercept="-1.5"/>
-                    </feComponentTransfer>
-                </filter>
-                
-                <rect width='100%' height='100%' filter='url(#organicGrain)'/>
-            </svg>
+    <div class="gradient-preview-container">
+        <div class="gradient-preview" style="background-color: #ffffff; background-image: 
+            linear-gradient(#e5e5e5 1px, transparent 1px), 
+            linear-gradient(90deg, #e5e5e5 1px, transparent 1px), 
+            linear-gradient(#f0f0f0 0.5px, transparent 0.5px), 
+            linear-gradient(90deg, #f0f0f0 0.5px, transparent 0.5px); 
+            background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px; height: 100%;">
         </div>
     </div>
     <div class="gradient-info">
-        <h3>Canson Matière Brute</h3>
-        <button class="btn-copy" data-code="background: #f4f4f2; filter: url(#organicGrain);">
+        <h3>Technical Paper</h3>
+        <button class="btn-copy" data-code="background-size: 50px 50px, 10px 10px;">
             <i class="fas fa-copy"></i> Copier CSS
         </button>
     </div>
-</article>-->
+</article>
 
-
-
-<!---Kraft--><!--
 <article class="grid-item card-gradient">
     <div class="gradient-preview-container" style="background-color: #c5a67c;">
         <div class="gradient-preview" style="
             background-color: #c5a67c;
             background-image: 
-                /* Fibres verticales : très fines (1px) et espacées de 6px */
                 repeating-linear-gradient(90deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 6px),
-                /* Fibres horizontales : encore plus subtiles, espacées de 4px */
                 repeating-linear-gradient(0deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 4px);
             background-size: 100% 100%;
             height: 100%;
@@ -843,52 +949,10 @@
     </div>
     <div class="gradient-info">
         <h3>Kraft Natural Balance</h3>
-        <button class="btn-copy" data-code="background-color: #c5a67c; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 6px), repeating-linear-gradient(0deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 4px);">
+        <button class="btn-copy" data-code="background: repeating-linear-gradient(Kraft);">
             <i class="fas fa-copy"></i> Copier CSS
         </button>
     </div>
-</article>-->
-<!--
-<article class="grid-item card-gradient">
-    <div class="gradient-preview-container">
-        <div class="gradient-preview" style="background-color: #ffffff; background-image: 
-            linear-gradient(#e5e5e5 1px, transparent 1px), 
-            linear-gradient(90deg, #e5e5e5 1px, transparent 1px), 
-            linear-gradient(#f0f0f0 0.5px, transparent 0.5px), 
-            linear-gradient(90deg, #f0f0f0 0.5px, transparent 0.5px); 
-            background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;">
-        </div>
-    </div>
-    <div class="gradient-info">
-        <h3>Technical Paper</h3>
-        <button class="btn-copy" data-code="background-color: #ffffff; background-image: linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px), linear-gradient(#f0f0f0 0.5px, transparent 0.5px), linear-gradient(90deg, #f0f0f0 0.5px, transparent 0.5px); background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;">
-            <i class="fas fa-copy"></i> Copier CSS
-        </button>
-    </div>
-</article>-->
-<!--
-<article class="grid-item card-gradient">
-    <div class="gradient-preview-container">
-        <div class="gradient-preview" style="background: radial-gradient(circle at 50% 50%, #fdf5e6, #f5deb3); position: relative;">
-             <svg style="filter: opacity(15%) contrast(150%); position: absolute; width: 100%; height: 100%;">
-                <filter id='parchmentNoise'>
-                    <feTurbulence type='turbulence' baseFrequency='0.05' numOctaves='2' />
-                    <feColorMatrix type='saturate' values='0'/>
-                </filter>
-                <rect width='100%' height='100%' filter='url(#parchmentNoise)'/>
-            </svg>
-        </div>
-    </div>
-    <div class="gradient-info">
-        <h3>Old Parchment</h3>
-        <button class="btn-copy" data-code="background: radial-gradient(circle at 50% 50%, #fdf5e6, #f5deb3);">
-            <i class="fas fa-copy"></i> Copier CSS
-        </button>
-    </div>
-</article>-->
-
-
+</article>
 
 </div>
-    </div>
-</section>
