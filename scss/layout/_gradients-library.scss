@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as vars;
+
+.section-library {
+    padding: 60px 0; // Règle des 60px respectée
+
+    .portfolio-grid {
+        display: grid;
+        gap: 30px;
+        margin-top: 40px;
+
+        // 1. MOBILE (< 600px) : 1 colonne
+        grid-template-columns: 1fr;
+
+        // 2. TABLETTE / INTERMÉDIAIRE (600px à 1199px) : 2 colonnes
+        @media (min-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        // 3. DESKTOP (>= 1200px) : 4 colonnes impératives
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+.card-gradient {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        
+        .gradient-preview {
+            transform: scale(1.05);
+        }
+    }
+
+    .gradient-preview-container {
+        overflow: hidden;
+        height: 200px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .gradient-preview {
+        height: 100%;
+        width: 100%;
+        transition: transform 0.5s ease;
+    }
+
+    .gradient-info {
+        padding: 20px;
+        text-align: center;
+        
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+    }
+}

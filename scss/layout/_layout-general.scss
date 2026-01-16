@@ -3,6 +3,16 @@
 /* --- COMPORTEMENT DE SCROLL --- */
 html {
     scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100%;
+    // On compense la hauteur du header
+    padding-top: v.$h-header; 
 }
 
 /* --- STRUCTURE UNIVERSELLE --- */
@@ -17,6 +27,32 @@ html {
     @media (max-width: 800px) {
         padding: 0 20px;
     }
+}
+
+/* --- HARMONISATION DU RYTHME VERTICAL --- */
+$spacing-section: 80px; 
+
+main section {
+    padding-top: $spacing-section !important;
+    padding-bottom: $spacing-section !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+// CORRECTION POUR LES ESPACES ENTRE TOYOTA / TSHIRTS / ETC.
+// Si une section en suit une autre, on enlève son padding du haut 
+// pour éviter le doublement (160px). On ne garde que les 80px du bas de la précédente.
+main section + section {
+    padding-top: 0 !important;
+}
+
+main section section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+main section:first-of-type {
+    padding-top: 0 !important;
 }
 
 /* --- SECTION HERO --- */
@@ -92,71 +128,36 @@ section[id] {
     scroll-margin-top: v.$h-header; 
 }
 
-/* --- SECTIONS AVEC COULEURS DE TEST (DEBUG ACTIF) --- */
+/* --- SECTIONS (Diagnostic visuel) --- */
 
 .intro-globale {
-    padding: 40px 0; 
-    background-color: v.$debug-magazine; // Diagnostic Magazine
+    background-color: #0000FF; // Bleu moche
+    .container {
+        background-color: #f9f9f9; 
+    }
 }
 
 .technos-section {
-    padding: 60px 0;
-    background-color: v.$debug-technos; // Diagnostic Vert Fluo
+    background-color: v.$debug-technos; // Vert fluo
+    .container {
+        background-color: #f9f9f9; 
+    }
 }
 
 .section-contenu {
-    padding: 60px 0;
-    background-color: v.$debug-magazine; 
+    background-color: #FFFF00; // Jaune poussin
+    .container {
+        background-color: #f9f9f9; 
+    }
 }
 
 .section-portfolio {
-    padding: 80px 0;
-    background-color: v.$debug-portfolio; // Diagnostic Rose
+    background-color: v.$debug-portfolio; // Rose
 }
 
-/* --- ANIMATION --- */
+/* --- ANIMATIONS --- */
 @keyframes smooth-bounce {
     0% { transform: translateY(0) rotate(45deg); opacity: 0.4; }
     50% { transform: translateY(12px) rotate(45deg); opacity: 1; }
     100% { transform: translateY(0) rotate(45deg); opacity: 0.4; }
-}
-
-/* --- SECTION AFRICA --- */
-.africaNumeroUn {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    gap: 30px;
-    padding: 80px 20px;
-    background-color: v.$color-blue-pro; 
-    color: v.$color-white;
-
-    img {
-        display: block;
-        height: auto;
-        max-width: 100%; 
-        border-radius: 4px;
-    }
-}
-
-/* --- SECTION MONK --- */
-.section-monks-intro {
-    padding: 0px 0; 
-    text-align: left; 
-    
-    img {
-        max-width: 100%; 
-        height: auto;
-        display: block; 
-        margin: 0 auto; 
-    }
-}
-
-@media (min-width: 800px) {
-    .africaNumeroUn {
-        flex-direction: row;
-        justify-content: center;
-        gap: 60px;
-        img { width: 350px; }
-    }
 }

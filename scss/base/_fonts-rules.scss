@@ -1,29 +1,97 @@
-@use '../abstracts/variables';
+@use '../abstracts/variables' as v;
 
-// 1. STYLE DU CORPS (Le texte courant)
-body {
-    font-family: variables.$font-body;
-    font-size: 18px;
-    line-height: 1.6;
-    // On utilise le rôle plutôt que la couleur brute
-    color: variables.$color-text-main; 
-    -webkit-font-smoothing: antialiased;
+/* --- 1. RESET GLOBAL & SCROLL --- */
+html { scroll-behavior: smooth; height: 100%; }
+body { 
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
+    min-height: 100%; 
+    padding-top: v.$h-header; 
 }
 
-// On cible explicitement les paragraphes si besoin de spécificité
-p {
-    margin-bottom: 1.5rem;
-    color: variables.$color-text-main;
+/* --- 2. LE VRAI RESET (Sections & Fontes) --- */
+// On cible ABSOLUMENT TOUT à l'intérieur de main pour remettre à zéro
+main, main *, main section, main div, main h1, main h2, main h3, main h4, main p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// 2. STYLE DES TITRES
-h1, h2, h3, .hero-title, .logo {
-    font-family: variables.$font-title;
-    line-height: 1.1;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    // On utilise le rôle titre
-    color: variables.$color-text-titles; 
+/* --- 3. REDÉFINITION DU RYTHME (80px) --- */
+$spacing-section: 80px; 
+
+main section {
+    // Seule règle autorisée pour l'espace vertical
+    padding-top: $spacing-section !important;
+    padding-bottom: $spacing-section !important;
 }
 
-// ... le reste de ton code (logo, hero-title) ne change pas
+// Mitoyenneté : Évite le cumul de 160px entre deux blocs
+main section + section {
+    padding-top: 0 !important;
+}
+
+/* --- 4. RÉGLAGES INTERNES (Pour la lisibilité) --- */
+// Une fois que le reset est fait, on redonne UNIQUEMENT du margin-bottom 
+// pour que les textes ne se collent pas entre eux dans le bloc gris.
+main h3 {
+    margin-bottom: 20px !important;
+}
+main p {
+    margin-bottom: 15px !important;
+}
+main *:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* --- 5. STRUCTURE DES CONTAINERS (Blocs gris) --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto !important;
+    padding: 0 50px !important; 
+    width: 100%;
+    /*background-color: #f9f9f9;*/                                               /*!!!!!!!!!!!!!!!!!!!!!!PRECISER A GEMINI QUE J'AI MASQUE CECI !*/
+    display: flow-root; 
+
+    @media (max-width: 800px) {
+        padding: 0 20px !important;
+    }
+}
+
+/* --- 6. DIAGNOSTIC VISUEL --- */
+.intro-globale    { background-color: #0000FF !important; } 
+.technos-section  { background-color: #00FF00 !important; } 
+.section-contenu  { background-color: #FFFF00 !important; } 
+.section-portfolio { background-color: #FFC0CB !important; } 
+
+/* --- 7. SECTION HERO (Inchangé pour la stabilité) --- */
+.hero-accueil {
+    position: relative;
+    height: calc(100vh - #{v.$h-header}); 
+    display: flex;
+    align-items: center;    
+    justify-content: center; 
+    overflow: hidden;
+    background-color: v.$color-black-pro;
+
+    .hero-image {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 1;
+        object-fit: cover;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        color: v.$color-white;
+        text-align: center; 
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    }
+}

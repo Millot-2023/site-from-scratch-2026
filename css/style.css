@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800;900&display=swap");
 * {
   margin: 0;
@@ -11,25 +12,119 @@ body {
   background: #f4f4f4;
 }
 
+/* --- 1. RESET GLOBAL & SCROLL --- */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
 body {
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #1a1a1a;
-  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100%;
+  padding-top: 70px;
 }
 
-p {
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
+/* --- 2. LE VRAI RESET (Sections & Fontes) --- */
+main, main *, main section, main div, main h1, main h2, main h3, main h4, main p {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-h1, h2, h3, .hero-title, .logo {
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.1;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  color: #1a1a1a;
+/* --- 3. REDÉFINITION DU RYTHME (80px) --- */
+main section {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+main section + section {
+  padding-top: 0 !important;
+}
+
+/* --- 4. RÉGLAGES INTERNES (Pour la lisibilité) --- */
+main h3 {
+  margin-bottom: 20px !important;
+}
+
+main p {
+  margin-bottom: 15px !important;
+}
+
+main *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* --- 5. STRUCTURE DES CONTAINERS (Blocs gris) --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto !important;
+  padding: 0 50px !important;
+  width: 100%;
+  /*background-color: #f9f9f9;*/ /*!!!!!!!!!!!!!!!!!!!!!!PRECISER A GEMINI QUE J'AI MASQUE CECI !*/
+  display: flow-root;
+}
+@media (max-width: 800px) {
+  .container {
+    padding: 0 20px !important;
+  }
+}
+
+/* --- 6. DIAGNOSTIC VISUEL --- */
+.intro-globale {
+  background-color: #0000FF !important;
+}
+
+.technos-section {
+  background-color: #00FF00 !important;
+}
+
+.section-contenu {
+  background-color: #FFFF00 !important;
+}
+
+.section-portfolio {
+  background-color: #FFC0CB !important;
+}
+
+/* --- 7. SECTION HERO (Inchangé pour la stabilité) --- */
+.hero-accueil {
+  position: relative;
+  height: calc(100vh - 70px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+.hero-accueil .hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero-accueil .hero-content {
+  position: relative;
+  z-index: 2;
+  color: #FFFFFF;
+  text-align: center;
+}
+.hero-accueil .hero-content .hero-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 /* Ajustement pour le header fixe */
@@ -199,6 +294,15 @@ body {
 /* --- COMPORTEMENT DE SCROLL --- */
 html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100%;
+  padding-top: 70px;
 }
 
 /* --- STRUCTURE UNIVERSELLE --- */
@@ -214,6 +318,27 @@ html {
   .container {
     padding: 0 20px;
   }
+}
+
+/* --- HARMONISATION DU RYTHME VERTICAL --- */
+main section {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+main section + section {
+  padding-top: 0 !important;
+}
+
+main section section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+main section:first-of-type {
+  padding-top: 0 !important;
 }
 
 /* --- SECTION HERO --- */
@@ -293,28 +418,33 @@ section[id] {
   scroll-margin-top: 70px;
 }
 
-/* --- SECTIONS AVEC COULEURS DE TEST (DEBUG ACTIF) --- */
+/* --- SECTIONS (Diagnostic visuel) --- */
 .intro-globale {
-  padding: 40px 0;
-  background-color: #ff4500;
+  background-color: #0000FF;
+}
+.intro-globale .container {
+  background-color: #f9f9f9;
 }
 
 .technos-section {
-  padding: 60px 0;
   background-color: #00ff00;
+}
+.technos-section .container {
+  background-color: #f9f9f9;
 }
 
 .section-contenu {
-  padding: 60px 0;
-  background-color: #ff4500;
+  background-color: #FFFF00;
+}
+.section-contenu .container {
+  background-color: #f9f9f9;
 }
 
 .section-portfolio {
-  padding: 80px 0;
   background-color: #fce4ec;
 }
 
-/* --- ANIMATION --- */
+/* --- ANIMATIONS --- */
 @-webkit-keyframes smooth-bounce {
   0% {
     -webkit-transform: translateY(0) rotate(45deg);
@@ -347,57 +477,6 @@ section[id] {
     -webkit-transform: translateY(0) rotate(45deg);
             transform: translateY(0) rotate(45deg);
     opacity: 0.4;
-  }
-}
-/* --- SECTION AFRICA --- */
-.africaNumeroUn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 30px;
-  padding: 80px 20px;
-  background-color: #003366;
-  color: #FFFFFF;
-}
-.africaNumeroUn img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  border-radius: 4px;
-}
-
-/* --- SECTION MONK --- */
-.section-monks-intro {
-  padding: 0px 0;
-  text-align: left;
-}
-.section-monks-intro img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-@media (min-width: 800px) {
-  .africaNumeroUn {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    gap: 60px;
-  }
-  .africaNumeroUn img {
-    width: 350px;
   }
 }
 .technos-section {
@@ -788,6 +867,80 @@ section[id] {
     margin-top: 0;
     margin-left: 20px;
   }
+}
+
+.section-library {
+  padding: 60px 0;
+}
+.section-library .portfolio-grid {
+  display: grid;
+  gap: 30px;
+  margin-top: 40px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 600px) {
+  .section-library .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .section-library .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-gradient {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  border: 1px solid #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+.card-gradient:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.card-gradient:hover .gradient-preview {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.card-gradient .gradient-preview-container {
+  overflow: hidden;
+  height: 200px;
+  border-bottom: 1px solid #eee;
+}
+.card-gradient .gradient-preview {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.card-gradient .gradient-info {
+  padding: 20px;
+  text-align: center;
+}
+.card-gradient .gradient-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
 }
 
 .main-footer {
