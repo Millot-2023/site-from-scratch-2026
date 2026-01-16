@@ -447,6 +447,243 @@
 </article>
 
 
+<!--bois-->
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #e3d5b8; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #e3d5b8; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.6;">
+                <filter id='lightOak'>
+                    <feTurbulence type='fractalNoise' baseFrequency='0.01 0.4' numOctaves='3' seed='1'/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 1 0" />
+                    <feComponentTransfer><feFuncA type="linear" slope="2" intercept="-0.5"/></feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#lightOak)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Chêne Clair</h3>
+        <button class="btn-copy" data-code="background: #e3d5b8; filter: url(#lightOak);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #5d4037; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #5d4037; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.7;">
+                <filter id='darkWalnut'>
+                    <feTurbulence type='turbulence' baseFrequency='0.02 0.05' numOctaves='5' seed='42'/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.1 0 0 0 0 0.05 0 0 0 1 0" />
+                    <feComponentTransfer><feFuncA type="linear" slope="4" intercept="-1.5"/></feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#darkWalnut)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Noyer Sombre</h3>
+        <button class="btn-copy" data-code="background: #5d4037; filter: url(#darkWalnut);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #1a1a1a; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #1a1a1a; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.9;">
+                <filter id='shouSugiBan'>
+                    <feTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3' seed='101' result='carbonLayer'/>
+                    <feTurbulence type='turbulence' baseFrequency='0.2' numOctaves='4' seed='102' result='cracklesLayer'/>
+                    
+                    <feComposite in='carbonLayer' in2='cracklesLayer' operator='arithmetic' k1='0.5' k2='0.5' result='blendedTexture'/>
+                    
+                    <feColorMatrix type="matrix" values="
+                        0.1 0 0 0 0 
+                        0 0.1 0 0 0 
+                        0 0 0.1 0 0 
+                        0 0 0 1 0" in="blendedTexture" result="monochromeBlack"/>
+                    
+                    <feComponentTransfer in="monochromeBlack">
+                        <feFuncA type="linear" slope="8" intercept="-3.5"/>
+                    </feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#shouSugiBan)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Bois Brûlé Authentique</h3>
+        <button class="btn-copy" data-code="background: #1a1a1a; filter: url(#shouSugiBan);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #1a1a1a; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #1a1a1a; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.9;">
+                <filter id='burntWood'>
+                    <feTurbulence type='turbulence' baseFrequency='0.01 0.3' numOctaves='4' seed='99'/>
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="10" intercept="-4"/>
+                    </feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#burntWood)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>glitch</h3>
+        <button class="btn-copy" data-code="background: #1a1a1a; filter: url(#burntWood);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #f5deb3; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #f5deb3; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.5;">
+                <filter id='rawPine'>
+                    <feTurbulence type='fractalNoise' baseFrequency='0.03 0.15' numOctaves='4' seed='12'/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0.6 0 0 0 0 0.4 0 0 0 0 0.2 0 0 0 1 0" />
+                    <feComponentTransfer><feFuncA type="linear" slope="3" intercept="-1"/></feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#rawPine)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Pin Brut</h3>
+        <button class="btn-copy" data-code="background: #f5deb3; filter: url(#rawPine);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
+
+
+<!--Briques-->
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="position: relative; overflow: hidden; height: 200px; background-color: #bbbbbb;">
+        <div class="gradient-preview" style="
+            width: 100%; 
+            height: 100%;
+            background-color: #bbbbbb;
+            background-image: 
+                linear-gradient(335deg, #a54229 23px, transparent 23px),
+                linear-gradient(155deg, #a54229 23px, transparent 23px),
+                linear-gradient(335deg, #a54229 23px, transparent 23px),
+                linear-gradient(155deg, #a54229 23px, transparent 23px);
+            background-size: 58px 58px;
+            background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+        ">
+            <svg width="100%" height="100%" style="opacity: 0.2; pointer-events: none;">
+                <filter id="noiseOnly">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" />
+                </filter>
+                <rect width="100%" height="100%" filter="url(#noiseOnly)"/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Mur de Briques CSS</h3>
+        <button class="btn-copy" data-code="background-color: #bbbbbb; background-image: linear-gradient(...);">
+            <i class="fas fa-copy"></i> Copier CSS
+        </button>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #d38d71; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #d38d71; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.8;">
+                <filter id='brickForaine'>
+                    <feTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='4' seed='201'/>
+                    <feColorMatrix type="matrix" values="0.8 0 0 0 0.1 0 0.6 0 0 0.1 0 0 0.5 0 0.1 0 0 0 1 0" />
+                    <feComponentTransfer><feFuncA type="linear" slope="3" intercept="-1"/></feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#brickForaine)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Brique Foraine</h3>
+        <button class="btn-copy" data-code="background: #d38d71; filter: url(#brickForaine);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
+
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #5d4a44; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #5d4a44; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.9;">
+                <filter id='oldStoneBrick'>
+                    <feTurbulence type='turbulence' baseFrequency='0.07' numOctaves='5' seed='202'/>
+                    <feColorMatrix type="matrix" values="0.5 0 0 0 0 0 0.5 0 0 0 0 0 0.5 0 0 0 0 0 1 0" />
+                    <feComponentTransfer><feFuncA type="linear" slope="5" intercept="-2"/></feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#oldStoneBrick)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Vieux Grès</h3>
+        <button class="btn-copy" data-code="background: #5d4a44; filter: url(#oldStoneBrick);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #f5f5f5; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #f5f5f5; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.5;">
+                <filter id='whiteLoftBrick'>
+                    <feTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='2' seed='203'/>
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="4" intercept="-1.5"/>
+                    </feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#whiteLoftBrick)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Brique Blanche</h3>
+        <button class="btn-copy" data-code="background: #f5f5f5; filter: url(#whiteLoftBrick);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
+
+
+
+
+
+<article class="grid-item card-gradient">
+    <div class="gradient-preview-container" style="background-color: #b35a38; position: relative; overflow: hidden;">
+        <div class="gradient-preview" style="background: #b35a38; height: 100%; width: 100%;">
+            <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.85;">
+                <filter id='reclaimedBrick'>
+                    <feTurbulence type='turbulence' baseFrequency='0.05 0.02' numOctaves='4' seed='204' result='noise'/>
+                    <feColorMatrix type="matrix" values="0.6 0 0 0 0.2 0 0.4 0 0 0.1 0 0 0.3 0 0 0 0 0 1 0" />
+                    <feComponentTransfer><feFuncA type="linear" slope="6" intercept="-2.5"/></feComponentTransfer>
+                </filter>
+                <rect width='100%' height='100%' filter='url(#reclaimedBrick)'/>
+            </svg>
+        </div>
+    </div>
+    <div class="gradient-info">
+        <h3>Terre Cuite</h3>
+        <button class="btn-copy" data-code="background: #b35a38; filter: url(#reclaimedBrick);"><i class="fas fa-copy"></i> Copier CSS</button>
+    </div>
+</article>
 
 
 <!--
