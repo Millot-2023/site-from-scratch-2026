@@ -7,7 +7,7 @@
     <div class="hero-content">
         <div class="container">
             <div class="etat-civil">
-                <p class="hero-title">Christophe MILLOT</p>
+                <p class="hero-title">UX-UI</p>
             </div>
         </div>
     </div>

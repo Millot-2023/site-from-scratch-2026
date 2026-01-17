@@ -7,7 +7,7 @@
     <div class="hero-content">
         <div class="container">
             <div class="etat-civil">
-                <p class="hero-title">Gradients Library</p>
+                <p class="hero-title">CSS</p>
             </div>
         </div>
     </div>
