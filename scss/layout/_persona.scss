@@ -1,11 +1,11 @@
 @use '../abstracts/variables' as v;
 
 #persona-section {
-    // Diagnostic : Jaune canari (Défini dans variables.scss)
-    background-color: v.$debug-persona; 
+    // Nettoyage : On utilise la couleur de fond officielle au lieu du debug
+    background-color: v.$color-bg-light; 
     
-    // Ajusté à 40px pour l'équilibre global entre les sections
-    padding: 40px 0;
+    // Rythme : Utilisation de la variable globale (80px) pour l'équilibre
+    padding: v.$spacer-section 0;
 
     & .persona-wrapper {
         display: grid !important; 
@@ -93,7 +93,8 @@
 
 @media (max-width: 800px) {
     #persona-section {
-        padding: 20px 0;
+        // En mobile, on réduit l'espace
+        padding: calc(v.$spacer-section / 2) 0;
     }
     
     #persona-section .persona-wrapper {

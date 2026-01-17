@@ -1,20 +1,8 @@
 @use '../abstracts/variables' as v;
 
+/* --- SECTION TECHNOS (CONTENU INTERNE UNIQUEMENT) --- */
 .technos-section {
-    // Diagnostic : Vert fluo (Défini dans variables.scss)
-    background-color: v.$debug-technos; 
-    padding-top: 40px;
-    padding-bottom: 40px;
-
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 40px;
-        background-color: v.$color-white;
-        border-radius: 8px;
-        // Ombre légère harmonisée avec le reste du site
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
+    /* Rappel : Le padding-top de 80px est géré par _layout-general.scss */
 
     h2 {
         text-align: center;
@@ -28,6 +16,7 @@
         display: grid;
         gap: 20px;
         grid-template-columns: 1fr; // Mobile par défaut
+        width: 100%; // On s'assure que la grille prend toute la place du container
     }
 
     a.tech-item {
@@ -65,8 +54,7 @@
             grid-template-columns: repeat(3, 1fr);
         }
 
-        // On garde uniquement l'effet de bordure et de légère élévation
-        // sans changer le background, conformément à tes goûts.
+        /* Effet discret au survol : bordure et élévation uniquement */
         a.tech-item:hover {
             border-color: v.$color-black-pro; 
             transform: translateY(-5px); 

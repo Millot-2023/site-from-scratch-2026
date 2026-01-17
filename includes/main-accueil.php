@@ -125,9 +125,6 @@
             <article class="grid-item">
                 <img src="assets/img/visuels/tshirt-css-style.png" alt="T-shirt CSS Style Pantone">
             </article>
-        </div>
-
-        <div class="portfolio-grid">
             <article class="grid-item">
                 <img src="assets/img/visuels/tshirt-JS.png" alt="T-shirt JavaScript">
             </article>

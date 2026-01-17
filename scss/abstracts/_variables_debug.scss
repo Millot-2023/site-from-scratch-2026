@@ -1,0 +1,43 @@
+// --- DESIGN SYSTEM : CV-CHRISTOPHE-MILLOT-2026 ---
+
+// 1. COULEURS DE BASE
+$color-black-pro:  #1a1a1a; 
+$color-blue-pro:   #003366; 
+$color-white:      #FFFFFF;    
+//$color-bg-light:   #F4F4F4;
+$color-bg-light:   white;
+$color-yellow:     #faff72;   
+$color-gray-light: #e0e0e0;    
+
+
+
+// 2. COULEURS DE DIAGNOSTIC (Désactivées proprement)
+// $debug-technos:   #00ff00;
+// $debug-portfolio: #fce4ec;
+// $debug-magazine:  #ff4500;
+// $debug-hero:      #ff00ff;
+// $debug-persona:   #ffff00;
+// $debug-journey:   #00ffff;
+// $debug-footer:    #757575;
+// $debug-sidebar:   #8e24aa;
+// $debug-cards:     #ffeb3b;
+// $debug-nav:       #cddc39;
+// $debug-extra:     #ff5722;
+
+
+// 3. ATTRIBUTION PAR RÔLE (La Charte)
+$color-logo:       $color-black-pro; 
+$color-hero-text:  $color-white;    
+
+// 4. COULEURS DE TEXTE
+$color-text-main:   $color-black-pro; 
+$color-text-titles: $color-black-pro; 
+$color-text-muted:  #999999;          
+$color-text-footer: #aaaaaa;          
+
+// 5. DIMENSIONS
+$h-header:         70px;       
+
+// 6. POLICES
+$font-title:       'Montserrat', sans-serif;
+$font-body:        'Inter', sans-serif;

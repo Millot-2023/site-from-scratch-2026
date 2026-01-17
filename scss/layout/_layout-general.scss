@@ -1,163 +1,101 @@
 @use '../abstracts/variables' as v;
 
-/* --- COMPORTEMENT DE SCROLL --- */
-html {
-    scroll-behavior: smooth;
-    height: 100%;
+/* --- [A] RESET & BOX MODEL --- */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+    margin: 0; 
     padding: 0;
     overflow-x: hidden;
-    min-height: 100%;
-    // On compense la hauteur du header
-    padding-top: v.$h-header; 
+    padding-top: v.$h-header;
+    background-color: v.$color-bg-light;
+    font-family: v.$font-body;
 }
 
-/* --- STRUCTURE UNIVERSELLE --- */
+/* --- [B] LE RAIL UNIQUE (1200px) --- */
 .container {
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 50px; 
+    margin: 0 auto;
     width: 100%;
-    outline: 1px dashed rgba(0, 0, 0, 0.1); 
+    padding-left: 50px;
+    padding-right: 50px;
 
     @media (max-width: 800px) {
-        padding: 0 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
-/* --- HARMONISATION DU RYTHME VERTICAL --- */
-$spacing-section: 80px; 
-
-main section {
-    padding-top: $spacing-section !important;
-    padding-bottom: $spacing-section !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+/* --- [C] LE RYTHME GLOBAL (80px) --- */
+/* On applique l'espace au-dessus de chaque section automatiquement */
+section {
+    padding-top: v.$spacer-section;
+    background-color: transparent; // Tue toute couleur de debug résiduelle
 }
 
-// CORRECTION POUR LES ESPACES ENTRE TOYOTA / TSHIRTS / ETC.
-// Si une section en suit une autre, on enlève son padding du haut 
-// pour éviter le doublement (160px). On ne garde que les 80px du bas de la précédente.
-main section + section {
-    padding-top: 0 !important;
+/* --- [D] LE CONFORT DES BLOCS GRIS (40px) --- */
+/* Au lieu de citer chaque section, on cible le container des sections grises */
+.intro-globale, .technos-section, .section-contenu {
+    .container {
+        background-color: #f9f9f9; 
+        border-radius: 8px;
+        padding: v.$spacer-container; // Tes 40px
+        border: 1px solid v.$color-gray-light;
+    }
 }
 
-main section section {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+/* --- [E] L'EXCEPTION PORTFOLIO --- */
+.section-portfolio .container {
+    background-color: transparent;
+    padding: 0; // Pas de padding interne pour que les images touchent le rail
 }
 
-main section:first-of-type {
-    padding-top: 0 !important;
-}
-
-/* --- SECTION HERO --- */
+/* --- [F] LE HERO & LA FLÈCHE --- */
 .hero-accueil {
     position: relative;
-    height: calc(100vh - #{v.$h-header}); 
-    width: 100%;
+    height: calc(100vh - #{v.$h-header});
     display: flex;
-    align-items: center;    
-    justify-content: center; 
-    overflow: hidden;
+    align-items: center;
+    justify-content: center;
     background-color: v.$color-black-pro;
-
-    picture, .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
+    overflow: hidden;
 
     .hero-image {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
         object-fit: cover;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        color: v.$color-white;
-        text-align: center; 
-        padding: 0 20px;
-
-        .hero-title {
-            color: v.$color-hero-text; 
-            font-family: v.$font-title;
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            font-weight: 800;
-            text-transform: uppercase;
-            line-height: 1.1;
-            margin: 0;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-        }
+        z-index: 1;
+        opacity: 0.6; // Pour mieux voir le texte
     }
 
     .scroll-indicator {
         position: absolute;
-        bottom: 50px; 
-        left: 50%;
+        bottom: 30px; left: 50%;
         transform: translateX(-50%);
         z-index: 10;
-        display: block;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-
         .arrow {
             display: block;
-            width: 20px;
-            height: 20px;
-            margin: 0 auto;
-            border-right: 4px solid v.$color-white; 
-            border-bottom: 4px solid v.$color-white; 
+            width: 20px; height: 20px;
+            border-right: 3px solid #fff;
+            border-bottom: 3px solid #fff;
             transform: rotate(45deg);
-            animation: smooth-bounce 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+            animation: smooth-bounce 2.5s infinite;
         }
     }
 }
 
-/* --- ANCRAGE --- */
+@keyframes smooth-bounce {
+    0%, 100% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(10px) rotate(45deg); }
+}
+
+/* --- [G] FIN DE PAGE & ANCRAGE --- */
+#vqr { 
+    padding-bottom: v.$spacer-section; 
+}
+
 section[id] {
     scroll-margin-top: v.$h-header; 
-}
-
-/* --- SECTIONS (Diagnostic visuel) --- */
-
-.intro-globale {
-    background-color: #0000FF; // Bleu moche
-    .container {
-        background-color: #f9f9f9; 
-    }
-}
-
-.technos-section {
-    background-color: v.$debug-technos; // Vert fluo
-    .container {
-        background-color: #f9f9f9; 
-    }
-}
-
-.section-contenu {
-    background-color: #FFFF00; // Jaune poussin
-    .container {
-        background-color: #f9f9f9; 
-    }
-}
-
-.section-portfolio {
-    background-color: v.$debug-portfolio; // Rose
-}
-
-/* --- ANIMATIONS --- */
-@keyframes smooth-bounce {
-    0% { transform: translateY(0) rotate(45deg); opacity: 0.4; }
-    50% { transform: translateY(12px) rotate(45deg); opacity: 1; }
-    100% { transform: translateY(0) rotate(45deg); opacity: 0.4; }
 }

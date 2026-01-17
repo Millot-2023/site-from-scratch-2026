@@ -1,26 +1,15 @@
 // --- DESIGN SYSTEM : CV-CHRISTOPHE-MILLOT-2026 ---
 
 // 1. COULEURS DE BASE
-$color-black-pro:  #1a1a1a; 
-$color-blue-pro:   #003366; 
-$color-white:      #FFFFFF;    
+$color-black-pro:   #1a1a1a; 
+$color-blue-pro:    #003366; 
+$color-white:       #FFFFFF;    
 //$color-bg-light:   #F4F4F4;
-$color-bg-light:   white;
-$color-yellow:     #faff72;   
-$color-gray-light: #e0e0e0;    
+$color-bg-light:    white;
+$color-yellow:      #faff72;   
+$color-gray-light:  #e0e0e0;    
 
-// 2. COULEURS DE DIAGNOSTIC (Les "couleurs moches" pour les tests d'espacement)
-$debug-technos:   #00ff00; // Vert fluo
-$debug-portfolio: #fce4ec; // Rose
-$debug-magazine:  #ff4500; // Rouge/Orange
-$debug-hero:      #ff00ff; // Magenta
-$debug-persona:   #ffff00; // Jaune canari
-$debug-journey:   #00ffff; // Cyan
-$debug-footer:    #757575; // Gris moyen
-$debug-sidebar:   #8e24aa; // Violet
-$debug-cards:     #ffeb3b; // Jaune vif
-$debug-nav:       #cddc39; // Citron vert
-$debug-extra:     #ff5722; // Deep Orange
+
 
 // 3. ATTRIBUTION PAR RÔLE (La Charte)
 $color-logo:       $color-black-pro; 
@@ -38,3 +27,7 @@ $h-header:         70px;
 // 6. POLICES
 $font-title:       'Montserrat', sans-serif;
 $font-body:        'Inter', sans-serif;
+
+// 7. ESPACEMENTS (INDISPENSABLE POUR LE LAYOUT)
+$spacer-section:   80px; 
+$spacer-container: 40px;
