@@ -288,7 +288,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* --- [B] LE RAIL UNIQUE (1200px) --- */
+/* --- [B] LE RAIL UNIQUE (STABILISÉ À 1200px) --- */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -304,14 +304,18 @@ body {
 }
 
 /* --- [C] LE RYTHME GLOBAL (80px) --- */
-/* On applique l'espace au-dessus de chaque section automatiquement */
 section {
   padding-top: 80px;
+  padding-bottom: 80px;
   background-color: transparent;
 }
 
+/* Évite le cumul de 160px entre deux sections */
+section + section {
+  padding-top: 0;
+}
+
 /* --- [D] LE CONFORT DES BLOCS GRIS (40px) --- */
-/* Au lieu de citer chaque section, on cible le container des sections grises */
 .intro-globale .container, .technos-section .container, .section-contenu .container {
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -319,13 +323,41 @@ section {
   border: 1px solid #e0e0e0;
 }
 
-/* --- [E] L'EXCEPTION PORTFOLIO --- */
-.section-portfolio .container {
-  background-color: transparent;
-  padding: 0;
+/* --- [E] FOCUS : SECTION MONKS (IMAGE CENTRÉE) --- */
+.section-monks-intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.section-monks-intro img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.section-monks-intro p {
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* --- [F] LE HERO & LA FLÈCHE --- */
+/* --- [F] L'EXCEPTION PORTFOLIO (HARMONISÉE) --- */
+.section-portfolio .container {
+  background-color: transparent;
+}
+
+/* --- [G] LE HERO & LA FLÈCHE --- */
 .hero-accueil {
   position: relative;
   height: calc(100vh - 70px);
@@ -372,6 +404,7 @@ section {
           animation: smooth-bounce 2.5s infinite;
 }
 
+/* --- [H] ANIMATIONS & ANCRAGE --- */
 @-webkit-keyframes smooth-bounce {
   0%, 100% {
     -webkit-transform: translateY(0) rotate(45deg);
@@ -382,7 +415,6 @@ section {
             transform: translateY(10px) rotate(45deg);
   }
 }
-
 @keyframes smooth-bounce {
   0%, 100% {
     -webkit-transform: translateY(0) rotate(45deg);
@@ -393,7 +425,6 @@ section {
             transform: translateY(10px) rotate(45deg);
   }
 }
-/* --- [G] FIN DE PAGE & ANCRAGE --- */
 #vqr {
   padding-bottom: 80px;
 }

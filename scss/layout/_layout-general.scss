@@ -14,7 +14,7 @@ body {
     font-family: v.$font-body;
 }
 
-/* --- [B] LE RAIL UNIQUE (1200px) --- */
+/* --- [B] LE RAIL UNIQUE (STABILISÉ À 1200px) --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -29,30 +29,59 @@ body {
 }
 
 /* --- [C] LE RYTHME GLOBAL (80px) --- */
-/* On applique l'espace au-dessus de chaque section automatiquement */
 section {
     padding-top: v.$spacer-section;
-    background-color: transparent; // Tue toute couleur de debug résiduelle
+    padding-bottom: v.$spacer-section;
+    background-color: transparent;
+}
+
+/* Évite le cumul de 160px entre deux sections */
+section + section {
+    padding-top: 0;
 }
 
 /* --- [D] LE CONFORT DES BLOCS GRIS (40px) --- */
-/* Au lieu de citer chaque section, on cible le container des sections grises */
 .intro-globale, .technos-section, .section-contenu {
     .container {
         background-color: #f9f9f9; 
         border-radius: 8px;
-        padding: v.$spacer-container; // Tes 40px
+        padding: v.$spacer-container; 
         border: 1px solid v.$color-gray-light;
     }
 }
 
-/* --- [E] L'EXCEPTION PORTFOLIO --- */
-.section-portfolio .container {
-    background-color: transparent;
-    padding: 0; // Pas de padding interne pour que les images touchent le rail
+/* --- [E] FOCUS : SECTION MONKS (IMAGE CENTRÉE) --- */
+.section-monks-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    // Centre l'image horizontalement
+    text-align: center;     // Centre le paragraphe
+    gap: 30px;              // Espace entre l'image et le texte
+    margin-bottom: 50px;    // Respiration avant la grille de boîtes
+
+    img {
+        max-width: 100%;    // Sécurité rail
+        width: 100%;        // Prend tout l'espace (ton PNG grande taille)
+        height: auto;
+        display: block;
+        border-radius: 8px;
+    }
+
+    p {
+        max-width: 850px;   // Confort de lecture optimal
+        margin: 0 auto;
+        line-height: 1.6;
+    }
 }
 
-/* --- [F] LE HERO & LA FLÈCHE --- */
+/* --- [F] L'EXCEPTION PORTFOLIO (HARMONISÉE) --- */
+.section-portfolio {
+    .container {
+        background-color: transparent;
+    }
+}
+
+/* --- [G] LE HERO & LA FLÈCHE --- */
 .hero-accueil {
     position: relative;
     height: calc(100vh - #{v.$h-header});
@@ -67,7 +96,7 @@ section {
         top: 0; left: 0; width: 100%; height: 100%;
         object-fit: cover;
         z-index: 1;
-        opacity: 0.6; // Pour mieux voir le texte
+        opacity: 0.6;
     }
 
     .scroll-indicator {
@@ -86,12 +115,12 @@ section {
     }
 }
 
+/* --- [H] ANIMATIONS & ANCRAGE --- */
 @keyframes smooth-bounce {
     0%, 100% { transform: translateY(0) rotate(45deg); }
     50% { transform: translateY(10px) rotate(45deg); }
 }
 
-/* --- [G] FIN DE PAGE & ANCRAGE --- */
 #vqr { 
     padding-bottom: v.$spacer-section; 
 }

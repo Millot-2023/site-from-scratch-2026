@@ -555,7 +555,7 @@
         </button>
     </div>
 </article>
-<article class="grid-item card-gradient">><!--Fait a chaque ligne-->
+<article class="grid-item card-gradient"><!--Fait a chaque ligne-->
     <div class="gradient-preview-container" style="background-color: #d38d71; position: relative; overflow: hidden;">
         <div class="gradient-preview" style="background: #d38d71; height: 100%; width: 100%;">
             <svg style="position: absolute; width: 100%; height: 100%; opacity: 0.8;">
